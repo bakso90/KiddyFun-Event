@@ -1,0 +1,299 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    background: #fbfaf2;
+    color: #273421;
+}
+
+/* Layout utama */
+
+.login-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    gap: 25px;
+}
+
+/* Bagian gambar */
+
+.login-image {
+    position: relative;
+    min-height: 650px;
+    border-radius: 22px;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(25, 48, 25, 0.65),
+            rgba(25, 48, 25, 0.08)
+        ),
+        url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(26, 45, 24, 0.5),
+        transparent 65%
+    );
+}
+
+.image-content {
+    position: absolute;
+    left: 9%;
+    bottom: 12%;
+    color: white;
+    z-index: 2;
+}
+
+.image-content h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(35px, 4vw, 55px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.image-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 350px;
+    color: #f0f2e8;
+    margin-bottom: 25px;
+}
+
+.image-content span {
+    font-size: 12px;
+    color: #e4ebd8;
+}
+
+/* Form login */
+
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Logo */
+
+.brand {
+    display: inline-block;
+    font-family: "Nunito", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #2f552d;
+    text-decoration: none;
+    margin-bottom: 65px;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: #8ca66a;
+}
+
+/* Judul */
+
+.welcome-label {
+    color: #78945c;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.login-form h2 {
+    font-family: "Nunito", sans-serif;
+    font-size: 38px;
+    color: #273421;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.login-form h2 em {
+    color: #477a3d;
+    font-style: normal;
+}
+
+.description {
+    color: #87917e;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* Input */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 9px;
+    color: #3c4b34;
+}
+
+.form-group input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e1e7d9;
+    border-radius: 11px;
+    padding: 0 15px;
+    background: white;
+    font-size: 13px;
+    outline: none;
+    color: #273421;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #789b65;
+    box-shadow: 0 0 0 3px rgba(120, 155, 101, 0.12);
+}
+
+.form-group input::placeholder {
+    color: #a4ac9c;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #8a9581;
+}
+
+.form-group small b {
+    color: #477a3d;
+}
+
+/* Password */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.password-wrapper button {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #477a3d;
+    font-weight: 800;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* Error message */
+
+#errorMessage {
+    font-size: 12px;
+    color: #c14b42;
+    margin-bottom: 15px;
+}
+
+/* Login button */
+
+.login-button {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: #477a3d;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(49, 93, 48, 0.18);
+    transition: 0.2s;
+}
+
+.login-button span {
+    margin-left: 12px;
+}
+
+.login-button:hover {
+    background: #2f552d;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+
+.login-footer {
+    text-align: center;
+    margin-top: 45px;
+    font-size: 11px;
+    color: #87917e;
+}
+
+.login-footer span {
+    color: #789b65;
+    margin-right: 5px;
+}
+
+.demo-note {
+    text-align: center;
+    font-size: 10px;
+    color: #a0a99a;
+    margin-top: 13px;
+}
+
+/* Responsive HP */
+
+@media (max-width: 800px) {
+
+    .login-container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .login-image {
+        min-height: 300px;
+    }
+
+    .image-content {
+        bottom: 10%;
+    }
+
+    .image-content h1 {
+        font-size: 35px;
+    }
+
+    .login-form-container {
+        padding: 35px 15px;
+    }
+
+    .brand {
+        margin-bottom: 35px;
+    }
+
+    .login-form h2 {
+        font-size: 32px;
+    }
+
+}

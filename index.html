@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<script>
+  if (sessionStorage.getItem("kiddyfunLoggedIn") !== "true") {
+      window.location.replace("login.html");
+  }
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KiddyFun — Event Seru untuk Anak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">✿</span> kiddy<span>fun</span></a>
+    <nav id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#events" class="nav-link">Explore Events</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#journey" class="nav-link">Event Journey</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button" id="ticketsButton">My Tickets <span class="ticket-count" id="ticketCount">0</span></button>
+      <button class="primary-button small" id="loginButton">Join Us</button>
+      <button class="text-button" id="logoutButton">
+        Logout ↗
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-photo"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow light">✦ LITTLE MOMENTS, BIG MEMORIES</span>
+        <h1>Make Their<br><em>Childhood</em> Magical.</h1>
+        <p>Temukan event seru, aktivitas kreatif, dan pengalaman menyenangkan untuk si kecil bersama KiddyFun.</p>
+        <a href="#events" class="primary-button">Explore Events <span>↗</span></a>
+        <div class="hero-note"><span class="note-icon">♡</span><span>Play, learn, and grow together.</span></div>
+      </div>
+      <div class="hero-sticker">FUN<br><b>FOR</b><br>KIDS!</div>
+      <div class="hero-bottom"><span>01 / 03</span><span class="hero-line"></span><span>Discover a world of fun</span></div>
+    </section>
+
+    <section class="quick-search">
+      <div class="search-intro"><span class="eyebrow">FIND YOUR FUN</span><strong>Plan a happy day!</strong></div>
+      <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari event, aktivitas, atau lokasi..."></label>
+      <select id="categoryFilter" aria-label="Kategori event">
+        <option value="all">Semua kategori</option>
+        <option value="Kreativitas">Kreativitas</option>
+        <option value="Festival">Festival</option>
+        <option value="Edukasi">Edukasi</option>
+        <option value="Petualangan">Petualangan</option>
+      </select>
+      <button class="primary-button search-button" id="searchButton">Find Event</button>
+    </section>
+
+    <section class="intro-section section-wrap" id="about">
+      <div class="intro-image">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=85" alt="Anak-anak sedang bermain bersama">
+        <div class="round-stamp">HAPPY<br>FAMILY<br>TIME ✿</div>
+      </div>
+      <div class="intro-copy">
+        <span class="eyebrow">WELCOME TO KIDDYFUN</span>
+        <h2>Small adventures.<br><em>Wonderful memories.</em></h2>
+        <p>KiddyFun adalah platform event dan hiburan anak yang membantu orang tua menemukan kegiatan positif untuk mengisi waktu bersama keluarga. Dari kelas kreatif hingga festival penuh permainan, selalu ada pengalaman baru untuk dicoba.</p>
+        <div class="intro-points">
+          <span>✓ Aktivitas sesuai usia</span><span>✓ Pendaftaran mudah</span><span>✓ Momen seru bersama keluarga</span>
+        </div>
+        <a href="#events" class="text-link">Kenali event kami <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="events-section" id="events">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">MAKE EVERY DAY SPECIAL</span><h2>Find Your Next <em>Adventure</em></h2><p>Pilih pengalaman menyenangkan untuk si kecil.</p></div>
+          <div class="slider-arrows"><button id="clearFilter" class="outline-button">Reset filter ↺</button></div>
+        </div>
+        <div class="event-grid" id="eventGrid"></div>
+        <p class="empty-message hidden" id="emptyMessage">Event tidak ditemukan. Coba kata kunci atau kategori lain, ya!</p>
+      </div>
+    </section>
+
+    <section class="journey-section" id="journey">
+      <div class="section-wrap">
+        <div class="section-heading journey-heading">
+          <div><span class="eyebrow">A LITTLE LOOK AT OUR COMMUNITY</span><h2>Every click brings <em>more smiles.</em></h2><p>Contoh data perjalanan pengguna KiddyFun dari melihat event hingga hadir di acara.</p></div>
+          <div class="yield-box"><span>OVERALL CONVERSION</span><strong id="overallYield">15.8%</strong></div>
+        </div>
+        <div class="funnel-card">
+          <div class="funnel-top"><div><strong>Event Registration Funnel</strong><small>Simulasi data pengguna · Data dummy</small></div><span class="data-tag">● LIVE DEMO</span></div>
+          <div class="funnel-list" id="funnelList"></div>
+          <div class="funnel-foot"><span>Angka dan persentase akan berubah saat simulasi pendaftaran dilakukan.</span><button id="resetDemo" class="text-link">Reset data demo ↺</button></div>
+        </div>
+        <div class="formula-grid">
+          <article><span class="formula-icon">↗</span><strong>Conversion Rate</strong><p>Jumlah tahap berikutnya ÷ jumlah tahap sebelumnya × 100%.</p></article>
+          <article><span class="formula-icon">↓</span><strong>Drop-off Rate</strong><p>100% − conversion rate. Menunjukkan pengguna yang tidak lanjut.</p></article>
+          <article><span class="formula-icon">◎</span><strong>Overall Yield</strong><p>Total yang hadir ÷ total pengunjung × 100%.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter section-wrap">
+      <div><span class="eyebrow light">LET THE FUN BEGIN</span><h2>Ready for a day<br>full of <em>smiles?</em></h2><p>Temukan kegiatan favorit si kecil bersama KiddyFun.</p></div>
+      <a href="#events" class="light-button">Explore all events ↗</a>
+      <span class="newsletter-doodle">✳</span>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">✿</span> kiddy<span>fun</span></a><p>Making childhood a little more magical.</p><span>© 2026 KiddyFun · Demo website dengan data dummy</span></footer>
+
+  <div class="modal-backdrop hidden" id="registrationModal">
+    <div class="modal">
+      <button class="modal-close" data-close aria-label="Tutup">×</button>
+      <span class="eyebrow">LET'S HAVE SOME FUN</span>
+      <h2>Join the <em>Adventure!</em></h2>
+      <p class="modal-event-name" id="modalEventName">Daftar event pilihanmu</p>
+      <form id="registrationForm">
+        <input type="hidden" id="selectedEventId">
+        <label>Nama orang tua<input id="parentName" required placeholder="Nama lengkap"></label>
+        <div class="form-row">
+          <label>Nama anak<input id="childName" required placeholder="Nama anak"></label>
+          <label>Usia anak<select id="childAge" required><option value="">Pilih usia</option><option>3 tahun</option><option>4 tahun</option><option>5 tahun</option><option>6 tahun</option><option>7 tahun</option><option>8 tahun</option><option>9 tahun</option><option>10 tahun</option><option>11 tahun</option><option>12 tahun</option></select></label>
+        </div>
+        <label>Email orang tua<input id="parentEmail" type="email" required placeholder="nama@email.com"></label>
+        <label>Nomor WhatsApp<input id="parentPhone" type="tel" required placeholder="08xxxxxxxxxx"></label>
+        <button class="primary-button full" type="submit">Confirm Registration <span>→</span></button>
+        <small class="form-note">Demo: data pendaftaran disimpan di browser ini (localStorage), bukan dikirim ke server.</small>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="ticketsModal">
+    <div class="modal tickets-modal">
+      <button class="modal-close" data-close aria-label="Tutup">×</button>
+      <span class="eyebrow">YOUR HAPPY MOMENTS</span><h2>My <em>Tickets</em></h2>
+      <p>Daftar event yang sudah kamu ikuti.</p>
+      <div id="ticketList" class="ticket-list"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+
+
+
+<!-- KiddyBot Chat Widget -->
+<div id="kiddybot-widget">
+
+  <button id="kiddybot-toggle" type="button">💬</button>
+
+  <div id="kiddybot-window" class="kiddybot-hidden">
+
+      <!-- HEADER -->
+      <div class="kiddybot-header">
+          <div>
+              <strong>🐻 KiddyBot</strong>
+              <small>Teman mencari event si kecil</small>
+          </div>
+          <button id="kiddybot-close" type="button">×</button>
+      </div>
+
+      <!-- AREA PERCAKAPAN -->
+      <div id="kiddybot-messages">
+          <div class="kiddybot-message bot">
+              Halo! 👋 Aku KiddyBot. Mau mencari event seru untuk si kecil?
+          </div>
+      </div>
+
+      <!-- PERTANYAAN CEPAT -->
+      <div class="kiddybot-quick-area">
+          <div class="kiddybot-quick-title">
+              Coba tanyakan ini, yuk! ✨
+          </div>
+
+          <div class="kiddybot-quick-questions">
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Ada event untuk anak usia 5 tahun?">
+                  Ada event untuk anak usia 5 tahun?
+              </button>
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Event apa saja yang ada di Depok?">
+                  Event apa saja yang ada di Depok?
+              </button>
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Berapa harga Little Artist?">
+                  Berapa harga Little Artist?
+              </button>
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Kapan jadwal Junior Science Lab?">
+                  Kapan jadwal Junior Science Lab?
+              </button>
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Apa kegiatan Mini Nature Explorer?">
+                  Apa kegiatan Mini Nature Explorer?
+              </button>
+
+              <button type="button" class="kiddybot-quick-btn"
+                  data-question="Ada event kategori Festival?">
+                  Ada event kategori Festival?
+              </button>
+
+          </div>
+      </div>
+
+      <!-- KOLOM INPUT -->
+      <form id="kiddybot-form">
+          <input
+              type="text"
+              id="kiddybot-input"
+              placeholder="Tulis pertanyaan..."
+              autocomplete="off"
+              required
+          >
+          <button type="submit">➤</button>
+      </form>
+
+  </div>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

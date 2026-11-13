@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KiddyFun</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <!-- Bagian gambar -->
+        <div class="login-image">
+            <div class="image-overlay"></div>
+
+            <div class="image-content">
+                <h1>Little Moments,<br>Big Memories.</h1>
+                <p>
+                    Discover fun activities and create
+                    wonderful memories with your little ones.
+                </p>
+                <span>♡ Making childhood magical</span>
+            </div>
+        </div>
+
+        <!-- Bagian form login -->
+        <div class="login-form-container">
+
+            <div class="login-form">
+
+                <a href="login.html" class="brand">
+                    ✿ kiddy<span>fun</span>
+                </a>
+
+                <span class="welcome-label">WELCOME BACK!</span>
+
+                <h2>Let's Get <em>Started!</em></h2>
+
+                <p class="description">
+                    Login untuk menjelajahi berbagai event
+                    dan hiburan seru untuk si kecil.
+                </p>
+
+                <form id="loginForm">
+
+                    <!-- Username -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Masukkan username"
+                            autocomplete="username"
+                            required
+                        >
+
+                        <small>Demo username: <b>kayla</b></small>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Masukkan password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+                        </div>
+
+                        <small>Demo password: <b>kayla123</b></small>
+                    </div>
+
+                    <!-- Error -->
+                    <p id="errorMessage"></p>
+
+                    <!-- Login button -->
+                    <button type="submit" class="login-button">
+                        Login to KiddyFun
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-footer">
+                    <span>✿</span>
+                    Making childhood a little more magical.
+                </div>
+
+                <p class="demo-note">
+                    Demo account khusus website KiddyFun.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>
